@@ -1,31 +1,14 @@
 <?php 
+
+    include __DIR__.'/partials/functions.php';
+
     $passLen = $_GET['passLen'];
     $characters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     $upperCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     $numbers = [0,1,2,3,4,5,6,7,8,9];
     $symbols = ['.',',','-','_',':',';','<','>','?','!'];
     
-    function generatePassword($passLen, $characters, $upperCharacters, $numbers, $symbols){
-        $pass_array = [];
-        
-
-        for($i=0; $i< ($passLen - 3); $i++){
-            $char = $characters[rand(0, 25)];
-            array_push($pass_array, $char);
-        };
-
-        array_push($pass_array, $upperCharacters[rand(0,25)]);
-        array_push($pass_array, $numbers[rand(0,9)]);
-        array_push($pass_array, $symbols[rand(0,9)]);
-
-        shuffle($pass_array);
-        
-        $password = implode($pass_array);
-        
-
-        return $password;
-
-    }
+    
  
 ?>
 
